@@ -68,12 +68,8 @@ exports.updateTentang = catchAsync(async (req, res, next) => {
   const { visi, misi } = req.body;
   const { file } = req;
 
-  console.log(visi);
-
   // Find the handicraft record by ID
   const tentang = await Tentang.findByPk(req.params.id);
-
-  console.log(visi);
 
   if (!tentang) {
     return next(new AppError('No document found with that ID', 404));
