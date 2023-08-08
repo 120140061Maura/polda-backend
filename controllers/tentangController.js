@@ -104,6 +104,7 @@ exports.updateTentang = catchAsync(async (req, res, next) => {
 
       // Update the handicraft record with the uploaded file URL
       tentang.photo_url = url;
+      await tentang.save();
     });
     stream.end(file.buffer);
   }
